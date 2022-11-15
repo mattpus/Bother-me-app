@@ -1,4 +1,4 @@
-package dev.notjust.photos;
+package dev.bother.me;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.facebook.react.ReactActivityDelegate;
 
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "notJustPhotos";
+    return "BotherMe";
   }
 
   @Override
