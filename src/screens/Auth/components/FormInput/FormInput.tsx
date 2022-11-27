@@ -30,6 +30,7 @@ function CustomInput<ContentType>({
               {borderColor: error ? 'red' : '#e8e8e8'},
             ]}>
             <TextInput
+              autoCapitalize="none"
               value={value as string}
               onChangeText={onChange}
               onBlur={onBlur}

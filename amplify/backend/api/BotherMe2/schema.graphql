@@ -3,12 +3,7 @@ type Like
   @auth(rules: [{allow: public}]) {
   id: ID!
   userID: ID! @index(name: "byUser")
-  postID: ID!
-    @index(
-      name: "byPost"
-      queryField: "likesForPostByUser"
-      sortKeyFields: ["userID"]
-    )
+  postID: ID! @index(name: "byPost", queryField: "likesForPostByUser", sortKeyFields: ["userID"])
 
   User: User @belongsTo(fields: ["userID"])
   Post: Post @belongsTo(fields: ["postID"])
@@ -21,12 +16,7 @@ type Comment
   createdAt: AWSDateTime!
   comment: String!
   userID: ID! @index(name: "byUser")
-  postID: ID!
-    @index(
-      name: "byPost"
-      queryField: "commentsByPost"
-      sortKeyFields: ["createdAt"]
-    )
+  postID: ID! @index(name: "byPost", queryField: "commentsByPost", sortKeyFields: ["createdAt"])
 
   User: User @belongsTo(fields: ["userID"])
   Post: Post @belongsTo(fields: ["postID"])
@@ -37,12 +27,7 @@ type Post
   @auth(rules: [{allow: public}]) {
   id: ID!
   createdAt: AWSDateTime!
-  type: String!
-    @index(
-      name: "postsByDate"
-      queryField: "postsByDate"
-      sortKeyFields: ["createdAt"]
-    )
+  type: String! @index(name: "postsByDate", queryField: "postsByDate", sortKeyFields: ["createdAt"])
   description: String
   image: String
   images: [String!]
@@ -61,8 +46,7 @@ type User
   id: ID!
   name: String!
   email: String!
-  username: String
-    @index(name: "usersByUsername", queryField: "usersByUsername")
+  username: String @index(name: "usersByUsername", queryField: "usersByUsername")
   bio: String
   website: AWSURL
   nofPosts: Int!
