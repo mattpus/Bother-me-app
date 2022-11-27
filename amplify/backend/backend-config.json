@@ -1,12 +1,12 @@
 {
   "auth": {
-    "Instagram": {
+    "BotherMe2": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "InstagramPostConfirmation",
+          "resourceName": "BotherMe2PostConfirmation",
           "triggerProvider": "Cognito",
           "attributes": [
             "Arn",
@@ -25,7 +25,7 @@
           "NAME"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 7,
+          "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
@@ -39,24 +39,25 @@
     }
   },
   "function": {
-    "InstagramPostConfirmation": {
+    "BotherMe2PostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "api",
-          "resourceName": "Instagram",
+          "resourceName": "BotherMe2",
           "attributes": [
             "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
           ]
         }
       ]
     }
   },
   "api": {
-    "Instagram": {
+    "BotherMe2": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -64,7 +65,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authInstagram"
+              "userPoolId": "authBotherMe2"
             }
           },
           "additionalAuthenticationProviders": [

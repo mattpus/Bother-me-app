@@ -1,16 +1,20 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "Instagram",
+    "apiName": "BotherMe2",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/vadim/Projects/academy.notjust.dev/Instagram/AcademyInstagram/amplify/backend/api/Instagram/schema.graphql",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authInstagram"
+      "mode": "API_KEY",
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
+      },
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authBotherMe2"
       }
     ],
     "conflictResolution": {

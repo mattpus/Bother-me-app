@@ -56,7 +56,7 @@ const CreatePostScreen = () => {
           },
         },
       });
-      console.log(response);
+      console.log('Create post', response);
 
       navigation.popToTop();
       navigation.navigate('HomeStack');

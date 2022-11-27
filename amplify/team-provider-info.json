@@ -1,26 +1,29 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-instagram-staging-135750-authRole",
-      "UnauthRoleArn": "arn:aws:iam::704219588443:role/amplify-instagram-staging-135750-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::704219588443:role/amplify-instagram-staging-135750-authRole",
-      "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-instagram-staging-135750-deployment",
-      "UnauthRoleName": "amplify-instagram-staging-135750-unauthRole",
-      "StackName": "amplify-instagram-staging-135750",
-      "StackId": "arn:aws:cloudformation:eu-west-1:704219588443:stack/amplify-instagram-staging-135750/4e889b30-6d66-11ec-b9a7-06b5bf485b17",
-      "AmplifyAppId": "d1u2yesgk7ujle",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-instagram-staging-135750-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AuthRoleName": "amplify-botherme2-staging-195909-authRole",
+      "UnauthRoleArn": "arn:aws:iam::743328087393:role/amplify-botherme2-staging-195909-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::743328087393:role/amplify-botherme2-staging-195909-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-botherme2-staging-195909-deployment",
+      "UnauthRoleName": "amplify-botherme2-staging-195909-unauthRole",
+      "StackName": "amplify-botherme2-staging-195909",
+      "StackId": "arn:aws:cloudformation:eu-central-1:743328087393:stack/amplify-botherme2-staging-195909/f7ee3b10-651f-11ed-8e7c-02567ebe02f8",
+      "AmplifyAppId": "d4b95m2snjefx",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-botherme2-staging-195909-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "Instagram": {}
+        "BotherMe2": {}
       },
       "function": {
-        "InstagramPostConfirmation": {
-          "deploymentBucketName": "amplify-instagram-staging-135750-deployment",
-          "s3Key": "amplify-builds/InstagramPostConfirmation-30693472415036575762-build.zip"
+        "BotherMe2PostConfirmation": {
+          "deploymentBucketName": "amplify-botherme2-staging-195909-deployment",
+          "s3Key": "amplify-builds/BotherMe2PostConfirmation-39663364377874745850-build.zip"
         }
+      },
+      "api": {
+        "BotherMe2": {}
       }
     }
   }

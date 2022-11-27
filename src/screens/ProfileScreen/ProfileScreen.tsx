@@ -24,7 +24,7 @@ const ProfileScreen = () => {
   const {userId: authUserId} = useAuthContext();
 
   const userId = route.params?.userId || authUserId;
-
+  console.log('USER ID', userId);
   const {data, loading, error, refetch} = useQuery<
     GetUserQuery,
     GetUserQueryVariables
@@ -38,7 +38,7 @@ const ProfileScreen = () => {
   if (error || !user) {
     return (
       <ApiErrorMessage
-        title="Error fetching the user"
+        title="Error fetching the user from ProfileScreen"
         message={error?.message || 'User not found'}
         onRetry={() => refetch()}
       />

@@ -366,9 +366,9 @@ PODS:
     - React-jsi (= 0.66.3)
     - React-logger (= 0.66.3)
     - React-perflogger (= 0.66.3)
-  - RNAWSCognito (5.2.7):
+  - RNAWSCognito (5.2.12):
     - React-Core
-  - RNCAsyncStorage (1.16.1):
+  - RNCAsyncStorage (1.17.11):
     - React-Core
   - RNCPicker (2.3.1):
     - React-Core
@@ -630,8 +630,8 @@ SPEC CHECKSUMS:
   React-RCTVibration: 50cfe7049167cfc7e83ac5542c6fff0c76791a9b
   React-runtimeexecutor: bbbdb3d8fcf327c6e2249ee71b6ef1764b7dc266
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
-  RNAWSCognito: 9c2cb4f8ad18a3bb891250018f14426daaeec812
-  RNCAsyncStorage: b49b4e38a1548d03b74b30e558a1d18465b94be7
+  RNAWSCognito: 8b90597e928a8e336af19c879aff0e9142afe9ff
+  RNCAsyncStorage: 8616bd5a58af409453ea4e1b246521bb76578d60
   RNCPicker: f6c760d4b314585ff35165d8640d7917ae30afb1
   RNInAppBrowser: 3ff3a3b8f458aaf25aaee879d057352862edf357
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
@@ -639,6 +639,6 @@ SPEC CHECKSUMS:
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: ac49598b687ec515e06784933674423ea7e4cf66
+PODFILE CHECKSUM: 306100e4507819536d1958e6417eedbd56ab64fb
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

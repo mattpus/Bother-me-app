@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.23\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "GROUP": {
       "Type": "String",
@@ -44,17 +44,17 @@
     "s3Key": {
       "Type": "String"
     },
-    "apiInstagramGraphQLAPIIdOutput": {
+    "apiBotherMe2GraphQLAPIIdOutput": {
       "Type": "String",
-      "Default": "apiInstagramGraphQLAPIIdOutput"
+      "Default": "apiBotherMe2GraphQLAPIIdOutput"
     },
-    "apiInstagramGraphQLAPIEndpointOutput": {
+    "apiBotherMe2GraphQLAPIEndpointOutput": {
       "Type": "String",
-      "Default": "apiInstagramGraphQLAPIEndpointOutput"
+      "Default": "apiBotherMe2GraphQLAPIEndpointOutput"
     },
-    "apiInstagramGraphQLAPIKeyOutput": {
+    "apiBotherMe2GraphQLAPIKeyOutput": {
       "Type": "String",
-      "Default": "apiInstagramGraphQLAPIKeyOutput"
+      "Default": "apiBotherMe2GraphQLAPIKeyOutput"
     }
   },
   "Conditions": {
@@ -79,12 +79,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "InstagramPostConfirmation",
+            "BotherMe2PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "InstagramPostConfirmation",
+                  "BotherMe2PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -108,14 +108,14 @@
             "GROUP": {
               "Ref": "GROUP"
             },
-            "API_INSTAGRAM_GRAPHQLAPIIDOUTPUT": {
-              "Ref": "apiInstagramGraphQLAPIIdOutput"
+            "API_BOTHERME2_GRAPHQLAPIIDOUTPUT": {
+              "Ref": "apiBotherMe2GraphQLAPIIdOutput"
             },
-            "API_INSTAGRAM_GRAPHQLAPIENDPOINTOUTPUT": {
-              "Ref": "apiInstagramGraphQLAPIEndpointOutput"
+            "API_BOTHERME2_GRAPHQLAPIENDPOINTOUTPUT": {
+              "Ref": "apiBotherMe2GraphQLAPIEndpointOutput"
             },
-            "API_INSTAGRAM_GRAPHQLAPIKEYOUTPUT": {
-              "Ref": "apiInstagramGraphQLAPIKeyOutput"
+            "API_BOTHERME2_GRAPHQLAPIKEYOUTPUT": {
+              "Ref": "apiBotherMe2GraphQLAPIKeyOutput"
             }
           }
         },
@@ -143,12 +143,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "InstagramPostConfirmation",
+            "BotherMe2PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "InstagramPostConfirmation",
+                  "BotherMe2PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -254,7 +254,7 @@
                       },
                       ":apis/",
                       {
-                        "Ref": "apiInstagramGraphQLAPIIdOutput"
+                        "Ref": "apiBotherMe2GraphQLAPIIdOutput"
                       },
                       "/types/Query/*"
                     ]
@@ -274,7 +274,7 @@
                       },
                       ":apis/",
                       {
-                        "Ref": "apiInstagramGraphQLAPIIdOutput"
+                        "Ref": "apiBotherMe2GraphQLAPIIdOutput"
                       },
                       "/types/Mutation/*"
                     ]
@@ -286,7 +286,7 @@
         }
       }
     },
-    "LambdaDynamoDBPolicy": {
+    "LambdaDynamoDbPolicy": {
       "DependsOn": [
         "LambdaExecutionRole"
       ],
@@ -318,7 +318,7 @@
                           [
                             "User-",
                             {
-                              "Ref": "apiInstagramGraphQLAPIIdOutput"
+                              "Ref": "apiBotherMe2GraphQLAPIIdOutput"
                             },
                             "-",
                             {

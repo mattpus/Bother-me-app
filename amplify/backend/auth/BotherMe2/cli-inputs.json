@@ -3,8 +3,8 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "instag8d8fe5e4",
-    "userPoolName": "Instagram",
+    "resourceNameTruncated": "botherd8b0fc1f",
+    "userPoolName": "BotherMe2",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,10 +14,10 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Forgot password code: {####}",
-    "emailVerificationMessage": "Forgot password code: {####}",
+    "emailVerificationSubject": "Verification code: {####}",
+    "emailVerificationMessage": "Verification code: {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 7,
+    "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
       "email",
@@ -28,10 +28,10 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Instag8d8fe5e4_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "Botherd8b0fc1f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "8d8fe5e4",
-    "resourceName": "Instagram",
+    "sharedId": "d8b0fc1f",
+    "resourceName": "BotherMe2",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
     "usernameAttributes": [
@@ -61,7 +61,7 @@
     "dependsOn": [
       {
         "category": "function",
-        "resourceName": "InstagramPostConfirmation",
+        "resourceName": "BotherMe2PostConfirmation",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",
@@ -70,7 +70,7 @@
       }
     ],
     "hostedUI": true,
-    "hostedUIDomainName": "ou5hlcij922j",
+    "hostedUIDomainName": "4ifnc0crf82u",
     "authProvidersUserPool": [
       "Facebook",
       "Google"
@@ -81,11 +81,11 @@
         "custom"
       ]
     },
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"notjustphotos://\"],\"LogoutURLs\":[\"notjustphotos://\"]}",
     "parentStack": {
       "Ref": "AWS::StackId"
     },
-    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"InstagramPostConfirmation\"\n  }\n]",
-    "permissions": []
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"BotherMe2PostConfirmation\"\n  }\n]",
+    "permissions": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"botherme://\"],\"LogoutURLs\":[\"botherme://\"]}"
   }
 }

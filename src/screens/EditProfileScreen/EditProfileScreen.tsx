@@ -96,7 +96,7 @@ const EditProfileScreen = () => {
     // delete from Cognito
     authUser?.deleteUser(err => {
       if (err) {
-        console.log(err);
+        console.log('ERR', err);
       }
       Auth.signOut();
     });
