@@ -16,7 +16,7 @@ import EditProfileScreen from '../screens/EditProfileScreen';
 const Stack = createNativeStackNavigator<RootNavigatorParamList>(); // { Navigator, Screen }
 
 const linking: LinkingOptions<RootNavigatorParamList> = {
-  prefixes: ['notjustphotos://', 'https://notjustphotos.com'],
+  prefixes: ['botherme://', 'https://notjustphotos.com'],
   config: {
     initialRouteName: 'Home',
     screens: {
@@ -44,7 +44,9 @@ const Navigation = () => {
     {variables: {id: userId}},
   );
   const userData = data?.getUser;
+
   console.log('USER DATA from Navigation', userData);
+  console.log('USER ID Nav', userId);
 
   if (user === undefined || loading) {
     return (
