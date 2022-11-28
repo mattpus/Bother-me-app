@@ -19,7 +19,7 @@
       "function": {
         "BotherMe2PostConfirmation": {
           "deploymentBucketName": "amplify-botherme2-staging-195909-deployment",
-          "s3Key": "amplify-builds/BotherMe2PostConfirmation-39663364377874745850-build.zip"
+          "s3Key": "amplify-builds/BotherMe2PostConfirmation-3353484d766f6b773042-build.zip"
         }
       },
       "api": {

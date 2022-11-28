@@ -1,6 +1,6 @@
 type Like
   @model
-  @auth(rules: [{allow: public}]) {
+  @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
   id: ID!
   userID: ID! @index(name: "byUser")
   postID: ID! @index(name: "byPost", queryField: "likesForPostByUser", sortKeyFields: ["userID"])
@@ -11,7 +11,7 @@ type Like
 
 type Comment
   @model
-  @auth(rules: [{allow: public}]) {
+  @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
   id: ID!
   createdAt: AWSDateTime!
   comment: String!
@@ -24,7 +24,7 @@ type Comment
 
 type Post
   @model
-  @auth(rules: [{allow: public}]) {
+  @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
   id: ID!
   createdAt: AWSDateTime!
   type: String! @index(name: "postsByDate", queryField: "postsByDate", sortKeyFields: ["createdAt"])
@@ -42,10 +42,10 @@ type Post
 
 type User
   @model
-  @auth(rules: [{allow: public}]) {
+  @auth(rules: [{allow: private, operations: [read]}, {allow: owner}]) {
   id: ID!
   name: String!
-  email: String!
+  email: String @auth(rules: [{allow: owner}])
   username: String @index(name: "usersByUsername", queryField: "usersByUsername")
   bio: String
   website: AWSURL

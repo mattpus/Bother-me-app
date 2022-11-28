@@ -56,6 +56,7 @@ exports.handler = async (event, context) => {
   const {sub, email, name} = event.request.userAttributes;
   const newUser = {
     id: sub,
+    owner: sub,
     name,
     email,
     nofPosts: 0,
