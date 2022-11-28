@@ -9,7 +9,6 @@ import {
   ModelSortDirection,
   OnCreateCommentByPostIdSubscription,
   OnCreateCommentByPostIdSubscriptionVariables,
-  OnCreateCommentSubscription,
 } from '../../API';
 import ApiErrorMessage from '../../components/ApiErrorMessage';
 import Comment from '../../components/Comment';
