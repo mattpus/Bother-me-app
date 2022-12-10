@@ -89,7 +89,9 @@ const CommentsScreen = () => {
         style={{padding: 10}}
         inverted
         ListEmptyComponent={() => (
-          <Text>No comments. Be the first comment</Text>
+          <Text style={{transform: [{scaleY: -1}]}}>
+            No comments. Be the first comment
+          </Text>
         )}
         onEndReached={() => loadMore()}
       />
