@@ -52,9 +52,7 @@ const ProfileHeader = ({user}: IProfileHeader) => {
         <View style={{flexDirection: 'row'}}>
           <Button
             text="Edit Profile"
-            onPress={() =>
-              navigation.navigate('MyProfile', {screen: 'EditProfile'})
-            }
+            onPress={() => navigation.navigate('Edit Profile')}
             inline
           />
           <Button text="Sign out" onPress={() => Auth.signOut()} inline />
