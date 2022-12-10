@@ -1,3 +1,4 @@
+import 'react-native-get-random-values';
 import {Linking} from 'react-native';
 import Navigation from './src/navigation';
 import Amplify from 'aws-amplify';

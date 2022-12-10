@@ -30,15 +30,18 @@
     "react": "17.0.2",
     "react-hook-form": "^7.20.5",
     "react-native": "0.66.3",
+    "react-native-get-random-values": "^1.8.0",
     "react-native-image-picker": "^4.3.0",
     "react-native-inappbrowser-reborn": "^3.6.3",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-pager-view": "^5.4.11",
     "react-native-popup-menu": "^0.15.12",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.1",
     "react-native-tab-view": "^3.1.1",
     "react-native-vector-icons": "^9.0.0",
-    "react-native-video": "^5.2.0"
+    "react-native-video": "^5.2.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -49,6 +52,7 @@
     "@types/react-native-vector-icons": "^6.4.10",
     "@types/react-native-video": "^5.0.10",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/uuid": "^9.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.14.0",
     "jest": "^26.6.3",

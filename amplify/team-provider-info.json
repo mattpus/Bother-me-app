@@ -24,6 +24,9 @@
       },
       "api": {
         "BotherMe2": {}
+      },
+      "storage": {
+        "storage": {}
       }
     }
   }

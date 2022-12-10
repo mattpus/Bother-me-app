@@ -3,14 +3,11 @@ import {View, Text, Image, Pressable} from 'react-native';
 import colors from '../../theme/colors';
 import Comment from '../Comment';
 import DoublePressable from '../DoublePressable';
-import Carousel from '../Carousel';
-import VideoPlayer from '../VideoPlayer';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {useNavigation} from '@react-navigation/native';
-import {FeedNavigationProp} from '../../types/navigation';
 
 import styles from './styles';
 import {Post} from '../../API';
@@ -19,6 +16,7 @@ import PostMenu from './PostMenu';
 
 import useLikeService from '../../services/LikeService';
 import dayjs from 'dayjs';
+import Content from './Content';
 
 interface IFeedPost {
   post: Post;
@@ -33,7 +31,7 @@ const FeedPost = (props: IFeedPost) => {
 
   const postLikes = post.Likes?.items.filter(like => !like?._deleted) || [];
 
-  const navigation = useNavigation<FeedNavigationProp>();
+  const navigation = useNavigation<any>();
 
   const navigateToUser = () => {
     if (post.User) {
@@ -53,22 +51,6 @@ const FeedPost = (props: IFeedPost) => {
     setIsDescriptionExpanded(existingValue => !existingValue);
   };
 
-  let content;
-  if (post.image) {
-    content = (
-      <Image
-        source={{
-          uri: post.image,
-        }}
-        style={styles.image}
-      />
-    );
-  } else if (post.images) {
-    content = <Carousel images={post.images} />;
-  } else if (post.video) {
-    content = <VideoPlayer uri={post.video} paused={!isVisible} />;
-  }
-
   return (
     <View style={styles.post}>
       {/* Header */}
@@ -87,7 +69,9 @@ const FeedPost = (props: IFeedPost) => {
       </View>
 
       {/* Content */}
-      <DoublePressable onDoublePress={toggleLike}>{content}</DoublePressable>
+      <DoublePressable onDoublePress={toggleLike}>
+        <Content post={post} isVisible={isVisible} />
+      </DoublePressable>
 
       {/* Footer */}
       <View style={styles.footer}>

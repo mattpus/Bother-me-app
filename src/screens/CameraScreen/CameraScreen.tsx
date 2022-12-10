@@ -10,6 +10,8 @@ import {
 } from 'expo-camera/build/Camera.types';
 import {useNavigation} from '@react-navigation/native';
 import {CameraNavigationProp} from '../../types/navigation';
+import {launchImageLibrary} from 'react-native-image-picker';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const flashModes = [
   FlashMode.off,
@@ -31,6 +33,7 @@ const CameraScreen = () => {
   const [flash, setFlash] = useState(FlashMode.off);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const insets = useSafeAreaInsets();
 
   const camera = useRef<Camera>(null);
   const navigation = useNavigation<CameraNavigationProp>();
@@ -75,6 +78,23 @@ const CameraScreen = () => {
     };
 
     const result = await camera.current.takePictureAsync(options);
+    navigation.navigate('Create', {
+      image: result.uri,
+    });
+  };
+  const navigateToLibrary = () => {
+    launchImageLibrary(
+      {mediaType: 'photo'},
+      ({didCancel, errorCode, assets}) => {
+        if (!didCancel && !errorCode && assets && assets.length > 0) {
+          if (assets.length === 1) {
+            navigation.navigate('Create', {
+              image: assets[0].uri,
+            });
+          }
+        }
+      },
+    );
   };
 
   const startRecording = async () => {
@@ -106,15 +126,15 @@ const CameraScreen = () => {
     }
   };
 
-  const navigateToCreateScreen = () => {
-    navigation.navigate('Create', {
-      images: [
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
-      ],
-      // image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
-    });
-  };
+  // const navigateToCreateScreen = () => {
+  //   navigation.navigate('Create', {
+  //     images: [
+  //       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
+  //       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
+  //     ],
+  //     // image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/4.jpg',
+  //   });
+  // };
 
   if (hasPermissions === null) {
     return <Text>Loading...</Text>;
@@ -135,7 +155,7 @@ const CameraScreen = () => {
         onCameraReady={() => setIsCameraReady(true)}
       />
 
-      <View style={[styles.buttonsContainer, {top: 25}]}>
+      <View style={[styles.buttonsContainer, {top: insets.top + 25}]}>
         <MaterialIcons name="close" size={30} color={colors.white} />
 
         <Pressable onPress={flipFlash}>
@@ -150,8 +170,9 @@ const CameraScreen = () => {
       </View>
 
       <View style={[styles.buttonsContainer, {bottom: 25}]}>
-        <MaterialIcons name="photo-library" size={30} color={colors.white} />
-
+        <Pressable onPress={navigateToLibrary}>
+          <MaterialIcons name="photo-library" size={30} color={colors.white} />
+        </Pressable>
         {isCameraReady && (
           <Pressable
             onPress={takePicture}
@@ -169,14 +190,6 @@ const CameraScreen = () => {
         <Pressable onPress={flipCamera}>
           <MaterialIcons
             name="flip-camera-ios"
-            size={30}
-            color={colors.white}
-          />
-        </Pressable>
-
-        <Pressable onPress={navigateToCreateScreen}>
-          <MaterialIcons
-            name="arrow-forward-ios"
             size={30}
             color={colors.white}
           />
