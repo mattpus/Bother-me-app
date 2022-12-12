@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import {Image} from 'react-native';
+//@ts-ignore
 import logo from '../assets/images/logo.png';
 import {HomeStackNavigatorParamList} from '../types/navigation';
 import UpdatePostScreen from '../screens/UpdatePostScreen';

@@ -6,6 +6,7 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+//@ts-ignore
 import Logo from '../../../assets/images/logo.png';
 import FormInput from '../components/FormInput';
 import CustomButton from '../components/CustomButton';

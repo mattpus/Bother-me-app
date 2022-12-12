@@ -11,6 +11,7 @@ import {useQuery} from '@apollo/client';
 import {postsByDate} from './queries';
 import {
   ModelSortDirection,
+  Post,
   PostsByDateQuery,
   PostsByDateQueryVariables,
 } from '../../API';
@@ -71,7 +72,12 @@ const HomeScreen = () => {
       <FlatList
         data={posts}
         renderItem={({item}) =>
-          item && <FeedPost isVisible={item.id === activePostId} post={item} />
+          item && (
+            <FeedPost
+              isVisible={item.id === activePostId}
+              post={item as Post}
+            />
+          )
         }
         showsVerticalScrollIndicator={false}
         viewabilityConfig={viewabilityConfig}

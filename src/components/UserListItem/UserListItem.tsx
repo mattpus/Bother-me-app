@@ -11,10 +11,13 @@ interface IUserListItem {
 }
 
 const UserListItem = ({user}: IUserListItem) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   const goToUserScreen = () => {
-    navigation.navigate('UserProfile', {userId: user.id});
+    navigation.navigate('UserProfile', {
+      screen: 'Profile',
+      params: {userId: user.id},
+    });
   };
 
   return (

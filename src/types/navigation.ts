@@ -1,4 +1,4 @@
-import {RouteProp} from '@react-navigation/native';
+import {NavigatorScreenParams, RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 
@@ -94,6 +94,10 @@ export type ProfileStackNavigatorParamList = {
   Profile: undefined;
   'Edit Profile': undefined;
 };
+// export type UserFollowScreenProps = NativeStackScreenProps<
+//   ProfileStackNavigatorParamList,
+//   'UserFollow'
+// >;
 
 export type ProfileNavigationProp = NativeStackNavigationProp<
   ProfileStackNavigatorParamList,

@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
+//@ts-ignore
 import image from './error.png';
 import colors from '../../theme/colors';
 import Button from '../Button';

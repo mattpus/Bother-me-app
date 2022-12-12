@@ -4,7 +4,7 @@ import UserListItem from '../../components/UserListItem';
 import {useQuery} from '@apollo/client';
 import {listUsers} from './queries';
 import ApiErrorMessage from '../../components/ApiErrorMessage';
-import {ListUsersQuery, ListUsersQueryVariables} from '../../API';
+import {ListUsersQuery, ListUsersQueryVariables, User} from '../../API';
 
 const UserSearchScreen = () => {
   const {data, loading, error, refetch} = useQuery<
@@ -29,7 +29,7 @@ const UserSearchScreen = () => {
   return (
     <FlatList
       data={users}
-      renderItem={({item}) => item && <UserListItem user={item} />}
+      renderItem={({item}) => item && <UserListItem user={item as User} />}
       onRefresh={() => refetch()}
       refreshing={loading}
     />

@@ -5,6 +5,7 @@ import {likesForPostByUser} from './queries';
 import {
   LikesForPostByUserQuery,
   LikesForPostByUserQueryVariables,
+  User,
 } from '../../API';
 import {useRoute} from '@react-navigation/native';
 import {PostLikesRouteProp} from '../../types/navigation';
@@ -36,7 +37,7 @@ const PostLikesScreen = () => {
   return (
     <FlatList
       data={likes}
-      renderItem={({item}) => <UserListItem user={item?.User} />}
+      renderItem={({item}) => <UserListItem user={item?.User as User} />}
       refreshing={loading}
       onRefresh={refetch}
     />
